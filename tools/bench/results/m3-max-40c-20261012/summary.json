@@ -1,0 +1,201 @@
+{
+  "date": "2026-10-12",
+  "timezone": "Australia/Sydney",
+  "base_commit": "9f6c23d704718d5944c25d5f0837ce603f3fa78c",
+  "hardware": {
+    "chip": "Apple M3 Max",
+    "gpu_family": "Apple9",
+    "gpu_cores": 40,
+    "memory_gb": 64,
+    "os": "macOS 27.0.1",
+    "recommended_working_set_gib": 51.84,
+    "max_buffer_gib": 38.88,
+    "power": "AC, automatic mode"
+  },
+  "versions": {
+    "python": "3.13.5",
+    "xcode": "27.0 (27A266a)",
+    "macos_sdk": "27.0",
+    "native_compiler": "Apple clang 21.0.0",
+    "numpy": "2.5.4",
+    "torch": "2.14.1",
+    "transformers": "5.17.0",
+    "nanobind": "3.1.0",
+    "pytest": "9.1.1",
+    "safetensors": "0.8.0",
+    "huggingface_hub": "1.33.0"
+  },
+  "profile": {
+    "path": "monolith/backends/metal/m3_max_40c/config.json",
+    "sha256": "7d601d119cd75672f40505c6294515a3ce6cfea94914a50f922a9584b44fdf26",
+    "tool": "tools/profile_writer.py",
+    "elapsed_seconds": 43,
+    "metal_shader_validation": false,
+    "automatic_fusion": false,
+    "model_recipes": false,
+    "kernel_choices": false
+  },
+  "probes": {
+    "command": "./probes/run_all.sh",
+    "completed": 17,
+    "build_or_probe_failures": 0,
+    "path": "probes/results/Apple-M3-Max_NAc_macOS27.0.1_20261012-165202.txt",
+    "note": "Shell metadata did not read core count; compiled probes independently detected 40 cores without fallback."
+  },
+  "reference_checkpoint": {
+    "repo": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "weight_sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696"
+  },
+  "checks": {
+    "contract": {
+      "command": "python -m pytest tests/contract -ra",
+      "passed": 1150,
+      "skipped": 1,
+      "warnings": 3,
+      "elapsed_seconds": 29.76,
+      "metal_shader_validation": false,
+      "skip_reasons": [
+        "SKIPPED [1] tests/contract/test_formats.py:124: could not import 'mlx.core': No module named 'mlx'"
+      ]
+    },
+    "kernel_runtime": {
+      "command": "python -m pytest tests/kernels tests/runtime --maxfail=5 -ra",
+      "passed": 1193,
+      "skipped": 461,
+      "warnings": 0,
+      "elapsed_seconds": 732.14,
+      "metal_shader_validation": true,
+      "skip_reasons": [
+        "SKIPPED [4] tests/kernels/test_attention_static.py:24: coherent task fusion requires Apple10",
+        "SKIPPED [30] tests/kernels/test_attention_static.py:99: coherent task fusion requires Apple10",
+        "SKIPPED [10] tests/kernels/test_attention_static.py:162: coherent task fusion requires Apple10",
+        "SKIPPED [2] tests/kernels/test_attention_static.py:172: coherent task fusion requires Apple10",
+        "SKIPPED [16] tests/kernels/test_attention_static.py:184: coherent task fusion requires Apple10",
+        "SKIPPED [4] tests/kernels/test_attention_static.py:194: coherent task fusion requires Apple10",
+        "SKIPPED [10] tests/kernels/test_attention_static.py:202: coherent task fusion requires Apple10",
+        "SKIPPED [4] tests/kernels/test_attention_static.py:210: coherent task fusion requires Apple10",
+        "SKIPPED [6] tests/kernels/test_attention_static.py:218: coherent task fusion requires Apple10",
+        "SKIPPED [2] tests/kernels/test_attention_static.py:229: coherent task fusion requires Apple10",
+        "SKIPPED [3] tests/kernels/test_attention_static.py:237: coherent task fusion requires Apple10",
+        "SKIPPED [3] tests/kernels/test_attention_static.py:245: coherent task fusion requires Apple10",
+        "SKIPPED [1] tests/kernels/test_attention_static.py:253: coherent task fusion requires Apple10",
+        "SKIPPED [2] tests/kernels/test_attention_static.py:260: coherent task fusion requires Apple10",
+        "SKIPPED [1] tests/kernels/test_attention_static.py:273: coherent task fusion requires Apple10",
+        "SKIPPED [3] tests/kernels/test_attention_static.py:295: coherent task fusion requires Apple10",
+        "SKIPPED [4] tests/kernels/test_attention_static.py:304: coherent task fusion requires Apple10",
+        "SKIPPED [72] tests/kernels/test_draft_program.py:60: the fused draft program's static tasks require Apple10",
+        "SKIPPED [63] tests/kernels/test_gdn_block_static.py:28: static megakernel tasks require Apple10",
+        "SKIPPED [1] tests/kernels/test_gdn_block_static.py:117: static megakernel tasks require Apple10",
+        "SKIPPED [3] tests/kernels/test_gdn_block_static.py:140: static megakernel tasks require Apple10",
+        "SKIPPED [13] tests/kernels/test_gdn_block_static.py:174: static megakernel tasks require Apple10",
+        "SKIPPED [2] tests/kernels/test_gdn_block_static.py:203: static megakernel tasks require Apple10",
+        "SKIPPED [9] tests/kernels/test_gdn_default.py:96: coherent task fusion requires Apple10",
+        "SKIPPED [6] tests/kernels/test_gdn_default.py:177: coherent task fusion requires Apple10",
+        "SKIPPED [1] tests/kernels/test_gdn_default.py:185: coherent task fusion requires Apple10",
+        "SKIPPED [3] tests/kernels/test_gdn_default.py:193: coherent task fusion requires Apple10",
+        "SKIPPED [36] tests/kernels/test_gdn_default.py:214: coherent task fusion requires Apple10",
+        "SKIPPED [2] tests/kernels/test_gdn_default.py:251: coherent task fusion requires Apple10",
+        "SKIPPED [4] tests/kernels/test_gdn_default.py:277: coherent task fusion requires Apple10",
+        "SKIPPED [1] tests/kernels/test_gdn_default.py:302: coherent task fusion requires Apple10",
+        "SKIPPED [5] tests/kernels/test_gemm_tile.py:107: a tile shape the Apple9 cooperative layout does not take: gemm_tile: on Apple9 a thread's TK/8 = 8 columns must be at least half a 32-weight word",
+        "SKIPPED [1] tests/kernels/test_gemm_tile.py:107: a tile shape the Apple9 cooperative layout does not take: gemm_tile: on Apple9 a block-scaled format needs TK/8 >= 16 columns per thread (TK=64)",
+        "SKIPPED [3] tests/kernels/test_gemm_tile.py:395: 8 slices of 8 K tiles: one K tile each, half a lane group \u2014 the scale cache needs whole lane groups",
+        "SKIPPED [16] tests/kernels/test_large_prefill.py:27: Resident verification prefill requires a speculative decoder recipe",
+        "SKIPPED [1] tests/kernels/test_lm_head_recipe.py:56: the tile operand recipe repacks for the Apple10 cooperative layout",
+        "SKIPPED [20] tests/kernels/test_mlp_block_static.py:61: static megakernel tasks require Apple10",
+        "SKIPPED [8] tests/kernels/test_mlp_block_static.py:84: static megakernel tasks require Apple10",
+        "SKIPPED [14] tests/kernels/test_mlp_block_static.py:102: static megakernel tasks require Apple10",
+        "SKIPPED [16] tests/kernels/test_mlp_block_static.py:129: static megakernel tasks require Apple10",
+        "SKIPPED [12] tests/kernels/test_mlp_block_static.py:151: static megakernel tasks require Apple10",
+        "SKIPPED [6] tests/kernels/test_mlp_block_static.py:171: static megakernel tasks require Apple10",
+        "SKIPPED [2] tests/kernels/test_mlp_block_static.py:185: static megakernel tasks require Apple10",
+        "SKIPPED [4] tests/kernels/test_mlp_block_static.py:208: static megakernel tasks require Apple10",
+        "SKIPPED [16] tests/kernels/test_mlp_block_static.py:227: static megakernel tasks require Apple10",
+        "SKIPPED [2] tests/kernels/test_modelopt_mlx.py:10: could not import 'mlx.core': No module named 'mlx'",
+        "SKIPPED [1] tests/kernels/test_payload_scale_order.py:52: a tile shape the Apple9 cooperative layout does not take: 64x64 for a 4-bit format",
+        "SKIPPED [10] tests/kernels/test_prefill_packed.py:20: packed prefill operands require Apple10",
+        "SKIPPED [3] tests/kernels/test_prefill_packed.py:89: packed prefill operands require Apple10"
+      ]
+    },
+    "cpu_oracles": {
+      "command": "python -m pytest tests/layers/test_layers_vs_hf.py tests/models/qwen3_5/test_golden.py -ra",
+      "passed": 5,
+      "skipped": 0,
+      "warnings": 0,
+      "elapsed_seconds": 10.54,
+      "metal_shader_validation": false
+    },
+    "gpu_model": {
+      "command": "python -m pytest tests/models/qwen3_5/test_gpu_golden.py tests/models/qwen3_5/test_spec_rollback.py tests/models/qwen3_5/test_mlx_int4.py -ra",
+      "passed": 6,
+      "skipped": 1,
+      "warnings": 0,
+      "elapsed_seconds": 317.75,
+      "metal_shader_validation": true,
+      "skip_reasons": [
+        "SKIPPED [1] tests/models/qwen3_5/test_mlx_int4.py:38: could not import 'mlx_lm': No module named 'mlx_lm'"
+      ]
+    }
+  },
+  "serving": {
+    "context_capacity": 4096,
+    "warmup_and_model_discovery": "passed",
+    "repeated_greedy_requests": "passed",
+    "usage": {
+      "prompt_tokens": 410,
+      "completion_tokens": 11,
+      "total_tokens": 421
+    },
+    "sse_text_and_usage_equivalence": "passed",
+    "/v1/responses": "passed",
+    "/v1/messages": "passed",
+    "cached_prompt_tokens": 395,
+    "prefix_reuse": "passed",
+    "visible_text": "The capital of France is **Paris**.\n",
+    "metal_shader_validation": true
+  },
+  "native_build": "passed",
+  "wheel_build_and_backend_shader_lookup": "passed",
+  "hygiene_python_compilation_whitespace": "Source/docs passed; raw probe output retained verbatim.",
+  "local_logs": "build/m3-max-40c-validation/",
+  "limits": [
+    "These small-reference checks do not qualify large pairs or fused layers; see qwen27b-summary.json for the separate pinned 27B/DSpark qualification.",
+    "CLI capacity was 4096; repeated HTTP prompt had 410 tokens, not a maximum-length prompt.",
+    "Leaf timings do not establish end-to-end generation performance.",
+    "Oracle tests used Transformers 5.17.0; 5.19.0 removed a constructor argument used by existing MoE oracle helpers."
+  ],
+  "large_model_qualification": "qwen27b-summary.json",
+  "post_merge_validation": {
+    "base_commit": "08d9d53067eab538e3ad8435a6a5b50b80088554",
+    "backend_cache_identity": "m3_max_40c-40c-7f8651279abc10cc",
+    "source_sha256": {
+      "tests/contract/test_metal_backends.py": "7362cead0b58e4581eb16aa9bf259853dc3cb34099b17731298d08d5e5a98c3f",
+      "tests/kernels/test_program_sharing.py": "532a0fc612ee99f6a51bab7c58df744b7af8d14f66704dc5d729a685000ecb07",
+      "tests/kernels/test_moe_program.py": "a1d0bd474a7269335499c196e0635774f38fa849adc1265c593f9913c5779db7",
+      "tests/kernels/test_moe_grouped.py": "a68348c9802299f61cb7c9efad548f872fa13507f30ac8ff3c80c81c1b01e14f",
+      "tests/kernels/test_draft_program.py": "ad6e3c401550bda32217541730fcf10d12e203c6c07b157078dd4f8c4c7e35e0",
+      "tests/kernels/test_mlp_block_static.py": "011474b4f2435efab530e664447d1fc011a370c2f9c771d5903669fc7b6f06e8",
+      "tests/kernels/test_lm_head_recipe.py": "477d38a95f583d935843df161204a171dd5cb3fd49a8d481e82de5f94cc9316a"
+    },
+    "contract": {
+      "passed": 1165,
+      "skipped": 1,
+      "warnings": 3,
+      "elapsed_seconds": 28.55,
+      "log": "/private/tmp/lithos-m3-max-post-merge-fixed-contract.log"
+    },
+    "affected_tests": {
+      "passed": 103,
+      "skipped": 171,
+      "elapsed_seconds": 8.87,
+      "metal_shader_validation": true,
+      "skip_reason": "Apple10-only static fusion and packed operands; no missing-device-profile skips",
+      "log": "/private/tmp/lithos-m3-max-post-merge-fixed-tests.log"
+    },
+    "hygiene": "passed",
+    "whitespace": "passed",
+    "large_model_qualification": "qwen27b-summary.json",
+    "serving_and_32k_prefix_reuse": "passed"
+  }
+}

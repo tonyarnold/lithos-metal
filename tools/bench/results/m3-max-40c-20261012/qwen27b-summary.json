@@ -1,0 +1,381 @@
+{
+  "date": "2026-10-12",
+  "timezone": "Australia/Sydney",
+  "status": "passed",
+  "base_commit": "08d9d53067eab538e3ad8435a6a5b50b80088554",
+  "previous_qualification_base_commit": "9f6c23d704718d5944c25d5f0837ce603f3fa78c",
+  "hardware": {
+    "chip": "Apple M3 Max",
+    "gpu_family": "Apple9",
+    "gpu_cores": 40,
+    "memory_gb": 64,
+    "os": "macOS 27.0.1",
+    "recommended_working_set_gib": 51.84,
+    "max_buffer_gib": 38.88,
+    "power": "AC, automatic mode"
+  },
+  "versions": {
+    "python": "3.13.5",
+    "xcode": "27.0 (27A266a)",
+    "macos_sdk": "27.0",
+    "native_compiler": "Apple clang 21.0.0",
+    "numpy": "2.5.4",
+    "torch": "2.14.1",
+    "transformers": "5.17.0",
+    "nanobind": "3.1.0",
+    "pytest": "9.1.1",
+    "safetensors": "0.8.0",
+    "huggingface_hub": "1.33.0"
+  },
+  "target": {
+    "repo": "nvidia/Qwen3.8-27B-NVFP4",
+    "revision": "482ca0f3832238542f8f5295dde86b5f22711d80",
+    "bytes": 21945269038,
+    "sha256_verified_shards": [
+      "model-00001-of-00003.safetensors",
+      "model-00002-of-00003.safetensors",
+      "model-00003-of-00003.safetensors"
+    ],
+    "weights": [
+      {
+        "path": "model-00001-of-00003.safetensors",
+        "bytes": 9965652544,
+        "sha256": "7d0fd155118901373eb0fd13ed3aae68f95be747bc205be72ebc41739c25ee80"
+      },
+      {
+        "path": "model-00002-of-00003.safetensors",
+        "bytes": 9985757064,
+        "sha256": "98a7e9486baa860c792c9463a770cb9d017696bdd17606300a5b9334149f4c27"
+      },
+      {
+        "path": "model-00003-of-00003.safetensors",
+        "bytes": 1970287672,
+        "sha256": "0506ad35dc21469708e7813bd76c592cef08bd0317b4a1fe899745ebe2435271"
+      }
+    ]
+  },
+  "automatic_draft": {
+    "repo": "LithosAI/Qwen3.8-27B-DSpark-NVFP4",
+    "revision": "b169bc4c8dc805a9e6178fa82f6a7b84b169a457",
+    "bytes": 1136281481,
+    "sha256_verified_shards": [
+      "model-00001.safetensors",
+      "model-00002.safetensors",
+      "model-00003.safetensors"
+    ],
+    "weights": [
+      {
+        "path": "model-00001.safetensors",
+        "bytes": 533870726,
+        "sha256": "e99ca354a8e212e71b2ba39f2f4e5a956b3c0824cc7cec6a357dcd92a1b7aaae"
+      },
+      {
+        "path": "model-00002.safetensors",
+        "bytes": 439479068,
+        "sha256": "03a43dd42f462d707fbf72d0128d01710da5a5c4a7ec6d1a417ac87c636c5a86"
+      },
+      {
+        "path": "model-00003.safetensors",
+        "bytes": 162908708,
+        "sha256": "dc310c2cfeb640a10ebe821d8aaf7ed00ccb405efd268bd6d4e7722869e4a642"
+      }
+    ]
+  },
+  "profile_sha256": "7d601d119cd75672f40505c6294515a3ce6cfea94914a50f922a9584b44fdf26",
+  "backend_cache_identity": "m3_max_40c-40c-7f8651279abc10cc",
+  "runtime": "shared Apple9 shaders, default ICB, no fusion recipes",
+  "metal_shader_validation": true,
+  "observer": "Returned token and acceptance statistics only; no generation-setting overrides.",
+  "boundary": {
+    "repeated_alpha_words": 32718,
+    "input_tokens": 32752,
+    "output_budget": 16
+  },
+  "cases": {
+    "fact": {
+      "raw_greedy_tokens_equal": true,
+      "visible_text_equal": true,
+      "phases": {
+        "dspark": {
+          "prompt_tokens": 21,
+          "output_budget": 64,
+          "output_tokens": 8,
+          "output_token_sha256": "9636a27a9cc56dc7a3efae48325f224d79b7532c588a713e98d743dbfd1d0a79",
+          "first_request_cached_tokens": 0,
+          "repeated_request_cached_tokens": 0,
+          "repeated_raw_tokens_equal": true,
+          "repeated_content_and_usage_equal": true,
+          "expected_answer": true,
+          "accepted": [
+            7
+          ],
+          "verified": [
+            7
+          ],
+          "mean_accepted": 7.0,
+          "validation_elapsed_seconds": {
+            "first": 0.888,
+            "repeat": 0.872
+          }
+        },
+        "target_only": {
+          "prompt_tokens": 21,
+          "output_budget": 64,
+          "output_tokens": 8,
+          "output_token_sha256": "9636a27a9cc56dc7a3efae48325f224d79b7532c588a713e98d743dbfd1d0a79",
+          "first_request_cached_tokens": 0,
+          "repeated_request_cached_tokens": 0,
+          "repeated_raw_tokens_equal": true,
+          "repeated_content_and_usage_equal": true,
+          "expected_answer": true,
+          "validation_elapsed_seconds": {
+            "first": 6.189,
+            "repeat": 6.316
+          }
+        }
+      }
+    },
+    "code": {
+      "raw_greedy_tokens_equal": true,
+      "visible_text_equal": true,
+      "phases": {
+        "dspark": {
+          "prompt_tokens": 35,
+          "output_budget": 96,
+          "output_tokens": 29,
+          "output_token_sha256": "1977eef22c246be6178de223234a774c64463afba762d41a1f19abdf467f6acd",
+          "first_request_cached_tokens": 0,
+          "repeated_request_cached_tokens": 0,
+          "repeated_raw_tokens_equal": true,
+          "repeated_content_and_usage_equal": true,
+          "accepted": [
+            5,
+            7,
+            7,
+            7
+          ],
+          "verified": [
+            7,
+            7,
+            7,
+            7
+          ],
+          "mean_accepted": 6.5,
+          "validation_elapsed_seconds": {
+            "first": 1.588,
+            "repeat": 1.596
+          }
+        },
+        "target_only": {
+          "prompt_tokens": 35,
+          "output_budget": 96,
+          "output_tokens": 29,
+          "output_token_sha256": "1977eef22c246be6178de223234a774c64463afba762d41a1f19abdf467f6acd",
+          "first_request_cached_tokens": 0,
+          "repeated_request_cached_tokens": 0,
+          "repeated_raw_tokens_equal": true,
+          "repeated_content_and_usage_equal": true,
+          "validation_elapsed_seconds": {
+            "first": 12.711,
+            "repeat": 13.199
+          }
+        }
+      }
+    },
+    "prefix": {
+      "raw_greedy_tokens_equal": true,
+      "visible_text_equal": true,
+      "phases": {
+        "dspark": {
+          "prompt_tokens": 2082,
+          "output_budget": 64,
+          "output_tokens": 8,
+          "output_token_sha256": "9636a27a9cc56dc7a3efae48325f224d79b7532c588a713e98d743dbfd1d0a79",
+          "first_request_cached_tokens": 0,
+          "repeated_request_cached_tokens": 2059,
+          "repeated_raw_tokens_equal": true,
+          "repeated_content_and_usage_equal": true,
+          "prefix_reuse": true,
+          "sse_equivalence": true,
+          "expected_answer": true,
+          "accepted": [
+            7
+          ],
+          "verified": [
+            7
+          ],
+          "mean_accepted": 7.0,
+          "validation_elapsed_seconds": {
+            "first": 22.653,
+            "repeat": 0.952
+          }
+        },
+        "target_only": {
+          "prompt_tokens": 2082,
+          "output_budget": 64,
+          "output_tokens": 8,
+          "output_token_sha256": "9636a27a9cc56dc7a3efae48325f224d79b7532c588a713e98d743dbfd1d0a79",
+          "first_request_cached_tokens": 0,
+          "repeated_request_cached_tokens": 2059,
+          "repeated_raw_tokens_equal": true,
+          "repeated_content_and_usage_equal": true,
+          "prefix_reuse": true,
+          "sse_equivalence": true,
+          "expected_answer": true,
+          "validation_elapsed_seconds": {
+            "first": 30.396,
+            "repeat": 6.687
+          }
+        }
+      }
+    },
+    "boundary_32k": {
+      "raw_greedy_tokens_equal": true,
+      "visible_text_equal": true,
+      "phases": {
+        "dspark": {
+          "prompt_tokens": 32752,
+          "output_budget": 16,
+          "output_tokens": 8,
+          "output_token_sha256": "9636a27a9cc56dc7a3efae48325f224d79b7532c588a713e98d743dbfd1d0a79",
+          "first_request_cached_tokens": 0,
+          "repeated_request_cached_tokens": 32729,
+          "repeated_raw_tokens_equal": true,
+          "repeated_content_and_usage_equal": true,
+          "prefix_reuse": true,
+          "expected_answer": true,
+          "accepted": [
+            7
+          ],
+          "verified": [
+            7
+          ],
+          "mean_accepted": 7.0,
+          "validation_elapsed_seconds": {
+            "first": 769.694,
+            "repeat": 2.01
+          }
+        },
+        "target_only": {
+          "prompt_tokens": 32752,
+          "output_budget": 16,
+          "output_tokens": 8,
+          "output_token_sha256": "9636a27a9cc56dc7a3efae48325f224d79b7532c588a713e98d743dbfd1d0a79",
+          "first_request_cached_tokens": 0,
+          "repeated_request_cached_tokens": 32729,
+          "repeated_raw_tokens_equal": true,
+          "repeated_content_and_usage_equal": true,
+          "prefix_reuse": true,
+          "expected_answer": true,
+          "validation_elapsed_seconds": {
+            "first": 792.545,
+            "repeat": 5.215
+          }
+        }
+      }
+    }
+  },
+  "phases": {
+    "dspark": {
+      "warmup": "passed",
+      "server_stopped": true,
+      "api_adapters": [
+        "Chat Completions",
+        "Responses",
+        "Messages"
+      ],
+      "command": [
+        "/Users/tonyarnold/Developer/Repositories/lithos-metal/.venv/bin/python",
+        "/Users/tonyarnold/Developer/Repositories/lithos-metal/build/m3-max-40c-validation/qwen27b_observed_cli.py",
+        "--model",
+        "nvidia/Qwen3.8-27B-NVFP4",
+        "--revision",
+        "482ca0f3832238542f8f5295dde86b5f22711d80",
+        "--download-dir",
+        "/private/tmp/lithos-m3-max-qwen27b-hub",
+        "--local-files-only",
+        "--pack",
+        "/private/tmp/lithos-m3-max-qwen27b-packs",
+        "--served-model-name",
+        "qwen27b-qualification",
+        "--max-context",
+        "32768",
+        "--keep-warm",
+        "0",
+        "--port",
+        "18091",
+        "--draft-revision",
+        "b169bc4c8dc805a9e6178fa82f6a7b84b169a457"
+      ],
+      "accepted_draft_tokens": 134,
+      "rejected_rounds": 3,
+      "gamma": 7,
+      "automatic_selection": true
+    },
+    "target_only": {
+      "warmup": "passed",
+      "server_stopped": true,
+      "api_adapters": [
+        "Chat Completions",
+        "Responses",
+        "Messages"
+      ],
+      "command": [
+        "/Users/tonyarnold/Developer/Repositories/lithos-metal/.venv/bin/python",
+        "/Users/tonyarnold/Developer/Repositories/lithos-metal/build/m3-max-40c-validation/qwen27b_observed_cli.py",
+        "--model",
+        "nvidia/Qwen3.8-27B-NVFP4",
+        "--revision",
+        "482ca0f3832238542f8f5295dde86b5f22711d80",
+        "--download-dir",
+        "/private/tmp/lithos-m3-max-qwen27b-hub",
+        "--local-files-only",
+        "--pack",
+        "/private/tmp/lithos-m3-max-qwen27b-packs",
+        "--served-model-name",
+        "qwen27b-qualification",
+        "--max-context",
+        "32774",
+        "--keep-warm",
+        "0",
+        "--port",
+        "18091",
+        "--no-draft"
+      ]
+    }
+  },
+  "limitations": [
+    "Greedy decoding and in-memory prefix reuse on the pinned pair and test prompts.",
+    "Target-only comparison uses the same engine; no independent full-model numerical oracle was run.",
+    "Sampling, disk-prefix persistence and larger context capacities were not qualified.",
+    "Elapsed times were collected with shader validation and are not production performance claims."
+  ],
+  "raw_evidence": "build/m3-max-40c-validation/qwen27b-post-merge/",
+  "packs": [
+    {
+      "name": "draft-3109ea9f4ce6f6928376e702",
+      "bytes": 1245380608,
+      "allocation_capacity": 32774,
+      "slab_formats": [
+        "bf16",
+        "nvfp4"
+      ]
+    },
+    {
+      "name": "target-c81e2f3da2bc45fc15fd754e",
+      "bytes": 20832813056,
+      "allocation_capacity": 32774,
+      "slab_formats": [
+        "bf16",
+        "fp8_e4m3",
+        "nvfp4"
+      ]
+    }
+  ],
+  "post_run_audit": {
+    "checkpoint_shards_reverified": 6,
+    "metal_validation_errors": 0,
+    "api_response_status_and_expected_answers": "passed",
+    "raw_tokens_match_previous_qualification": true
+  }
+}
